@@ -14,7 +14,7 @@ const CountryCard = ({country}) => {
           <Card.Body className="d-flex flex-column">
             <Card.Title>{country.name.common}</Card.Title>
             <Card.Subtitle className="mb-5 text-muted">
-              {'Single Country Official Name'}
+              {country.name.official}
             </Card.Subtitle>
             <ListGroup
               variant="flush"

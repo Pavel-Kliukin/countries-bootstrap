@@ -14,8 +14,6 @@ const Countries = () => {
   const loading = useSelector((state) => state.countries.isLoading)
   const [search, setSearch] = useState('')
 
-  console.log("Search: ", search)
-
   useEffect(() => {
     dispatch(initializeCountries())
   }, [dispatch])
@@ -46,7 +44,9 @@ const Countries = () => {
       <Row xs={2} md={3} lg={4} className=" g-3">
         {
         countriesList.map((country) => {
-          if (country.name.common.toLowerCase().includes(search.toLowerCase())){
+          //This is a search filter
+          if (country.name.common.toLowerCase().includes(search.toLowerCase()) 
+              || country.name.official.toLowerCase().includes(search.toLowerCase())){
             return (
               <CountryCard country= {country} key={country.name.common}/>
             )
