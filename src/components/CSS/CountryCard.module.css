@@ -1,0 +1,16 @@
+.cardCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBox {
+  width: 300px;
+  margin: none;
+  border-radius: 20px;
+  /* border: solid 1px #707070; */
+  border: none;
+  background: #e0e0e0;
+box-shadow:  27px 27px 54px #d0d0d0,
+             -27px -27px 54px #f0f0f0;
+}

@@ -1,0 +1,10 @@
+.cardsRow {
+  max-width: 1300px;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0e0e0;
+}
