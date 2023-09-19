@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import CountryCard from './CountryCard';
 import countriesAPI from '../services/countries';
 import { initializeCountries } from '../features/countries/countriesSlice';
+import classes from './CSS/Countries.module.css';
 
 const Countries = () => {
   const dispatch = useDispatch()
@@ -26,7 +27,7 @@ const Countries = () => {
   }
 
   return (
-    <Container fluid>
+    <Container className={classes.cardsContainer} fluid>
       <Row>
         <Col className="mt-5 d-flex justify-content-center">
           <Form>
@@ -41,14 +42,16 @@ const Countries = () => {
           </Form>
         </Col>
       </Row>
-      <Row xs={2} md={3} lg={4} className=" g-3">
+      <Row xs={2} md={3} lg={3} className={`g-3 ${classes.cardsRow}`}>
         {
         countriesList.map((country) => {
           //This is a search filter
           if (country.name.common.toLowerCase().includes(search.toLowerCase()) 
               || country.name.official.toLowerCase().includes(search.toLowerCase())){
             return (
-              <CountryCard country= {country} key={country.name.common}/>
+              <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
+                <CountryCard country={country} />
+              </Col>
             )
           } else return null
         })}
