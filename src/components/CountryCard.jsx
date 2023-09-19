@@ -17,6 +17,11 @@ const CountryCard = ({country}) => {
             <Card.Subtitle className="mb-5 text-muted">
               {country.name.official}
             </Card.Subtitle>
+            <div className={classes.flagContainer}>
+              <div className={classes.flagBox}>
+                <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
+              </div>
+            </div>
           </Card.Body>
         </Card>
       </LinkContainer>

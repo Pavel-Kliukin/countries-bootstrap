@@ -6,11 +6,42 @@
 
 .cardBox {
   width: 300px;
-  margin: none;
+  min-height: 250px;
   border-radius: 20px;
-  /* border: solid 1px #707070; */
   border: none;
   background: #e0e0e0;
-box-shadow:  27px 27px 54px #d0d0d0,
-             -27px -27px 54px #f0f0f0;
+  box-shadow:  26px 26px 52px #cecece,
+              -26px -26px 52px #f2f2f2;
+}
+
+.cardBox:hover {
+  border: solid 0.5px #c2c5c6;
+  box-shadow:  22px 22px 44px #bababa,
+              -22px -22px 44px #ffffff;
+}
+
+.flagContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flagBox{
+  width: 130px;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10%;
+  border: solid 1px #707070;
+  background: #e0e0e0;
+  box-shadow:  19px 19px 38px #bcbcbc,
+               -19px -19px 38px #ffffff;
+}
+
+.flagIMG {
+  opacity: 0.7;
+  width: 100px;
+  height: 70px;
 }

@@ -1,5 +1,9 @@
 .cardsRow {
-  max-width: 1300px;
+  width: 1300px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .cardsContainer {
