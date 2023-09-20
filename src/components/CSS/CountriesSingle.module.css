@@ -1,0 +1,10 @@
+.countryContainer {
+    background: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 100vw;
+    /* Height will take the whole remaining space of the viewport height */
+    min-height: calc(100vh - 56px);
+  }

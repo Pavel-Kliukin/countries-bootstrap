@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useLocation,useNavigate } from 'react-router-dom';
+import classes from './CSS/CountriesSingle.module.css'
 
 const CountriesSingle = () => {
   // Function hooks
@@ -31,7 +32,7 @@ const CountriesSingle = () => {
 
 
   return (
-    <Container>
+    <Container className={classes.countryContainer}>
       <div>Single Country will be here</div>
     </Container>
   );
