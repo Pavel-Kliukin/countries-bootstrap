@@ -5,6 +5,60 @@
     align-items: center;
     justify-content: flex-start;
     min-width: 100vw;
-    /* Height will take the whole remaining space of the viewport height */
     min-height: calc(100vh - 56px);
-  }
+}
+
+.countryBox {
+  margin-top: 3rem;
+  width: 1300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.countryNameBox {
+  max-width: 1300px;
+  max-height: 200px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: solid 0.5px #707070;
+  background: #e0e0e0;
+  box-shadow:  21px 21px 42px #c5c5c5,
+              -21px -21px 42px #fbfbfb;
+}
+
+.officialName {
+  color: #918d8d;
+}
+
+.countryInfoBox {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flagBox{
+  width: 280px;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: solid 0.5px #707070;
+  background: #e0e0e0;
+  box-shadow:  21px 21px 42px #c5c5c5,
+              -21px -21px 42px #fbfbfb;
+}
+
+.flagIMG {
+  opacity: 0.7;
+  border-radius: 10px;
+  border: solid 0.5px #707070;
+  max-width: 90%;
+  width: auto;
+  max-height: 90%;
+  height: auto;
+}
