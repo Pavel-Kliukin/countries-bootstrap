@@ -46,6 +46,7 @@ const Countries = () => {
         {
         countriesList.map((country) => {
           //This is a search filter
+          // It's better to use a reducer or filter instead of mapping through the whole array
           if (country.name.common.toLowerCase().includes(search.toLowerCase()) 
               || country.name.official.toLowerCase().includes(search.toLowerCase())){
             return (
