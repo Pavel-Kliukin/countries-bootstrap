@@ -18,7 +18,6 @@
 .countryNameBox {
   max-width: 1300px;
   max-height: 200px;
-  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,15 +27,6 @@
   background: #e0e0e0;
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
-}
-
-.officialName {
-  color: #918d8d;
-}
-
-.countryInfoBox {
-  display: flex;
-  justify-content: flex-start;
 }
 
 .flagBox{
@@ -61,4 +51,23 @@
   width: auto;
   max-height: 90%;
   height: auto;
+}
+
+.countryInfoBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+  min-width: 300px;
+  height: 160px;
+  border-radius: 10px;
+  border: solid 0.5px #707070;
+  background: #e0e0e0;
+  box-shadow:  21px 21px 42px #c5c5c5,
+              -21px -21px 42px #fbfbfb;
+}
+
+#weatherIcon {
+  margin-right: 1rem;
 }

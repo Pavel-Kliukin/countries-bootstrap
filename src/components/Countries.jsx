@@ -44,18 +44,18 @@ const Countries = () => {
       </Row>
       <Row xs={2} md={3} lg={3} className={`g-3 ${classes.cardsRow}`}>
         {
-        countriesList.map((country) => {
-          //This is a search filter
-          // It's better to use a reducer or filter instead of mapping through the whole array
-          if (country.name.common.toLowerCase().includes(search.toLowerCase()) 
-              || country.name.official.toLowerCase().includes(search.toLowerCase())){
-            return (
-              <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
-                <CountryCard country={country} />
-              </Col>
-            )
-          } else return null
-        })}
+
+        countriesList.reduce( (prev, country) =>
+          country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
+          [...prev, 
+            <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
+              <CountryCard country={country} />
+            </Col>
+          ]
+          : prev,
+          []
+          )
+        }
       </Row>
     </Container>
   );

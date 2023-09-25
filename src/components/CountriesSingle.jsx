@@ -58,30 +58,37 @@ const CountriesSingle = () => {
       <div className={classes.countryBox}>
         <div className={classes.countryNameBox}>
           <h2>{country.name.common}</h2>
-          {/* <h4 className={classes.officialName}>{country.name.official}</h4> */}
         </div>
-        <div className={classes.countryInfoBox}>
-          <div className={classes.flagBox}>
-            <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
-          </div>
-        </div>
+        <Row className='mt-5'>
+          <Col className='col-3'>
+            <div className={classes.flagBox}>
+              <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
+            </div>
+          </Col>
+          <Col>
+            <div className={classes.countryInfoBox}>
+              <p><strong>Official name:</strong> {country.name.official}</p>
+              <p><strong>Capital:</strong> {country.capital}</p>
+              {errors && <p>Sorry, we don't have weather data for this country</p>}
+              {!errors && weather && (
+                <div>
+                  <p>
+                    <img id={classes.weatherIcon} src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'} alt="weather icon" />
+                    Right now it is <strong>{parseInt(weather.main.temp)}</strong> degrees in {country.capital} and {weather.weather[0].description}
+                  </p>
+                </div>
+              )}
+            </div>
+          </Col>
+        </Row>
         <Row className='mt-5'>
           <Col>
             <Image thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
           </Col>
           <Col>
-          {errors && <p>Sorry, we don't have weather data for this country</p>}
-            {!errors && weather && (
-              <div>
-                <p>
-                  Right now it is <strong>{parseInt(weather.main.temp)}</strong> degrees in {country.capital} and {weather.weather[0].description}
-                </p>
-                <img src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'} alt="weather icon" />
-              </div>
-            )}
           </Col>
         </Row>
-        <Row>
+        <Row className='mt-5'>
           <Col>
             <Button varian="light" onClick={() => navigate('/countries')}>Back to Countries</Button>
           </Col>
