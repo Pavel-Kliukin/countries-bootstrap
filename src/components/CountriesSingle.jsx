@@ -68,14 +68,16 @@ const CountriesSingle = () => {
           <Col>
             <div className={classes.countryInfoBox}>
               <p><strong>Official name:</strong> {country.name.official}</p>
-              <p><strong>Capital:</strong> {country.capital}</p>
+              {country.capital && <p><strong>Capital:</strong> {country.capital}</p>}
               {errors && <p>Sorry, we don't have weather data for this country</p>}
               {!errors && weather && (
-                <div>
-                  <p>
-                    <img id={classes.weatherIcon} src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'} alt="weather icon" />
-                    Right now it is <strong>{parseInt(weather.main.temp)}</strong> degrees in {country.capital} and {weather.weather[0].description}
-                  </p>
+                <div className={classes.weatherBox}>
+                    <div className={classes.weatherIconBox}>
+                      <img id={classes.weatherIcon} src={'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'} alt="weather icon" />
+                    </div>
+                    <p>
+                      Right now it is <strong>{parseInt(weather.main.temp)}</strong> degrees in {country.capital} and {weather.weather[0].description}
+                    </p>
                 </div>
               )}
             </div>

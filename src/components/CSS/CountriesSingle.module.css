@@ -68,6 +68,22 @@
               -21px -21px 42px #fbfbfb;
 }
 
-#weatherIcon {
-  margin-right: 1rem;
+.weatherBox {
+  display: flex;
+  align-items: center;
+}
+
+.weatherIconBox {
+  width: 50px;
+  height: 50px;
+  border: solid 0.5px #c6c3c3;
+  border-radius: 5px;
+  margin-right: 1.5rem;
+  background: #e0e0e0;
+  box-shadow:  none;
+}
+
+.weatherIconBox:hover {
+  box-shadow:  11px 11px 22px #bfbaba,
+              -11px -11px 22px #fffcfc;
 }
