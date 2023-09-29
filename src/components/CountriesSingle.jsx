@@ -89,7 +89,7 @@ const CountriesSingle = () => {
             <Image thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
           </Col>
           <Col>
-            <div className={classes.countryInfoBox}>
+            <div className={`${classes.countryInfoBox} ${classes.bigInfo}`}>
               <p><strong>Region:</strong> {country.region}</p>
               <p><strong>Subregion:</strong> {country.subregion}</p>
               <p><strong>Population:</strong> {country.population.toLocaleString('en-US')} people</p>

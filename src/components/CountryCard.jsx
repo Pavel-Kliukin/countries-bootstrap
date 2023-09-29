@@ -2,6 +2,7 @@ import { Card, Col, ListGroup, Row } from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import classes from './CSS/CountryCard.module.css'
 import { useDispatch, useSelector } from "react-redux"
+import { addFavourite, removeFavourite } from "../features/countries/favouritesSlice"
 
 
 const CountryCard = ({country}) => {
@@ -19,6 +20,15 @@ const CountryCard = ({country}) => {
           <Card.Body className="d-flex flex-column">
             <Card.Title>{country.name.common}</Card.Title>
            
+            {favouritesList.includes(country.name.common) ? (
+                    <i
+                    className="bi bi-heart-fill text-danger m-1 p-1"
+                    onClick={() => dispatch(removeFavourite(country.name.common))} />
+                  ) : (
+                    <i
+                    className="bi bi-heart text-danger m-1 p-1"
+                    onClick={() => dispatch(addFavourite(country.name.common))} />
+                  )}
 
             <Card.Subtitle className="mb-5 text-muted">
               {country.name.official}

@@ -68,6 +68,10 @@
               -21px -21px 42px #fbfbfb;
 }
 
+.bigInfo {
+  height: 100%;
+}
+
 .weatherBox {
   display: flex;
   align-items: center;
