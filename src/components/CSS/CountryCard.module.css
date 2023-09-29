@@ -44,6 +44,7 @@
 .flagBox{
   width: 130px;
   height: 110px;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;

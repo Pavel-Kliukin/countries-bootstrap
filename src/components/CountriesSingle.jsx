@@ -29,6 +29,7 @@ const CountriesSingle = () => {
       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${country.capital}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_KEY}`)
         .catch((err) => {
           setError(true)
+          setLoading(false)
         })
         .then((res) => {
           setWeather(res.data)
@@ -88,6 +89,18 @@ const CountriesSingle = () => {
             <Image thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
           </Col>
           <Col>
+            <div className={classes.countryInfoBox}>
+              <p><strong>Region:</strong> {country.region}</p>
+              <p><strong>Subregion:</strong> {country.subregion}</p>
+              <p><strong>Population:</strong> {country.population.toLocaleString('en-US')} people</p>
+              <p><strong>Area:</strong> {country.area.toLocaleString('en-US')} km<sup>2</sup></p>
+              <p><strong>Timezone:</strong> {country.timezones[0]}</p>
+              <p><strong>Currency: </strong> 
+                {Object.values(country.currencies ?? {})
+                  .map((currency) => currency.name)
+                  .join(", ")}</p>
+              <p><strong>Languages:</strong> {Object.values(country.languages ?? {}).join(", ")}</p>
+            </div>
           </Col>
         </Row>
         <Row className='mt-5'>
