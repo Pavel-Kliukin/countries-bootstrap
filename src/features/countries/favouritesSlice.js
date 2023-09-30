@@ -1,7 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit"
 
-// const favourites = localStorage.getItem('favourites') !== null ? JSON.parse(localStorage.getItem('favourites')) : []
-const favourites = ["Finland"]
+const favourites = localStorage.getItem('favourites') !== null ? JSON.parse(localStorage.getItem('favourites')) : []
 
 export const favouritesSlice = createSlice({
   name: 'favourites',

@@ -19,13 +19,6 @@ const Countries = () => {
     dispatch(initializeCountries())
   }, [dispatch])
 
-  // We will be replacing this with data from our API.
-  const country = {
-    name: {
-      common: 'Example Country'
-    }
-  }
-
   return (
     <Container className={classes.cardsContainer} fluid>
       <Row>
@@ -42,7 +35,7 @@ const Countries = () => {
           </Form>
         </Col>
       </Row>
-      <Row xs={2} md={3} lg={3} className={`g-3 ${classes.cardsRow}`}>
+      <Row xs={1} md={2} lg={3} className={`g-3 ${classes.cardsRow}`}>
         {
 
         countriesList.reduce( (prev, country) =>

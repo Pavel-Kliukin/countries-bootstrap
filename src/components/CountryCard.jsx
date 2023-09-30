@@ -1,4 +1,4 @@
-import { Card, Col, ListGroup, Row } from "react-bootstrap"
+import { Card, Col} from "react-bootstrap"
 import { LinkContainer } from "react-router-bootstrap"
 import classes from './CSS/CountryCard.module.css'
 import { useDispatch, useSelector } from "react-redux"
@@ -10,6 +10,16 @@ const CountryCard = ({country}) => {
   const favouritesList = useSelector((state) => state.favourites.favourites)
   const dispatch = useDispatch()
 
+  const handleRemoveFavourite = (event) => {
+    event.stopPropagation();
+    dispatch(removeFavourite(country.name.common));
+  };
+
+  const handleAddFavourite = (event) => {
+    event.stopPropagation();
+    dispatch(addFavourite(country.name.common));
+  };
+
   return (
     <Col className={`mt-5 ${classes.cardCol}`}>
       <LinkContainer m={0}
@@ -18,17 +28,21 @@ const CountryCard = ({country}) => {
       >
         <Card m={0} className={`h-100 ${classes.cardBox}`}>
           <Card.Body className="d-flex flex-column">
-            <Card.Title>{country.name.common}</Card.Title>
-           
+            <Card.Title>
+              {country.name.common}
+
             {favouritesList.includes(country.name.common) ? (
                     <i
                     className="bi bi-heart-fill text-danger m-1 p-1"
-                    onClick={() => dispatch(removeFavourite(country.name.common))} />
+                    onClick={handleRemoveFavourite} />
                   ) : (
                     <i
                     className="bi bi-heart text-danger m-1 p-1"
-                    onClick={() => dispatch(addFavourite(country.name.common))} />
+                    onClick={handleAddFavourite} />
                   )}
+
+            </Card.Title>
+           
 
             <Card.Subtitle className="mb-5 text-muted">
               {country.name.official}
