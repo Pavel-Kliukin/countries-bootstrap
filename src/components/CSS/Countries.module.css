@@ -2,14 +2,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-start; */
   align-items: center;
   background-color: #e0e0e0;
 }
 
 .cardsRow {
   max-width: 1300px;
-  /* min-height: 100vh;
-  display: flex; */
-
 }

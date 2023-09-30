@@ -1,0 +1,32 @@
+.clearAndSearch {
+  max-width: 1300px;
+  width: 100%;
+}
+
+.buttonBox {
+  width: 320px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchForm {
+  width: 18rem;
+}
+
+.cardsContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.cardsRow {
+  max-width: 1300px;
+}
+
+@media (max-width: 767px) {
+  .searchForm {
+    width: 320px;
+  }
+}

@@ -27,7 +27,6 @@ const Countries = () => {
             <Form.Control
               style={{ width: '18rem' }}
               type="search"
-              className="me-2 "
               placeholder="Search for countries"
               aria-label="Search"
               onChange={(e) => setSearch(e.target.value)}
