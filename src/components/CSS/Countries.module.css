@@ -1,3 +1,18 @@
+.titleAndSearch {
+  max-width: 1300px;
+  width: 100%;
+}
+
+.titleBox {
+  width: 320px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.searchForm {
+  width: 18rem;
+}
+
 .cardsContainer {
   min-height: 100vh;
   display: flex;
@@ -8,4 +23,10 @@
 
 .cardsRow {
   max-width: 1300px;
+}
+
+@media (max-width: 767px) {
+  .searchForm {
+    width: 320px;
+  }
 }

@@ -21,11 +21,16 @@ const Countries = () => {
 
   return (
     <Container className={classes.cardsContainer} fluid>
-      <Row>
-        <Col className="mt-5 d-flex justify-content-center">
+      <Row xs={1} md={2} lg={3} className={classes.titleAndSearch}>
+        <Col className="mt-5">
+          <div className={classes.titleBox}>
+            <h1>Countries</h1>
+          </div>
+        </Col>
+        <Col className="mt-5 d-flex justify-content-center align-items-center">
           <Form>
             <Form.Control
-              style={{ width: '18rem' }}
+              className={classes.searchForm}
               type="search"
               placeholder="Search for countries"
               aria-label="Search"

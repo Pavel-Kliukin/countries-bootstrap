@@ -3,7 +3,7 @@
   width: 100%;
 }
 
-.buttonBox {
+.titleBox {
   width: 320px;
   display: flex;
   justify-content: flex-start;
@@ -11,6 +11,13 @@
 
 .searchForm {
   width: 18rem;
+}
+
+.buttonBox {
+  width: 320px;
+  height: 38px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .cardsContainer {

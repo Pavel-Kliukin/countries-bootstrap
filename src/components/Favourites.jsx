@@ -38,14 +38,12 @@ const Favourites = () => {
   return (
     <Container className={classes.cardsContainer} fluid>
     <Row xs={1} md={2} lg={3} className={classes.clearAndSearch}>
-      <Col className="mt-5 d-flex justify-content-center">
-        <div className={classes.buttonBox}>
-          <Button onClick={() => {
-            dispatch(clearFavourites())
-          }}>Clear Favourites</Button>
-        </div>
-      </Col>
-      <Col className="mt-5 d-flex justify-content-center">
+      <Col className="mt-5">
+          <div className={classes.titleBox}>
+            <h1>My Favourites</h1>
+          </div>
+        </Col>
+      <Col className="mt-5 d-flex justify-content-center align-items-center">
         <Form>
           <Form.Control
             type="search"
@@ -55,6 +53,13 @@ const Favourites = () => {
             onChange={(e) => setSearch(e.target.value)}
           />
         </Form>
+      </Col>
+      <Col className="mt-5 d-flex justify-content-center align-items-center">
+        <div className={classes.buttonBox}>
+          <Button onClick={() => {
+            dispatch(clearFavourites())
+          }}>Clear Favourites</Button>
+        </div>
       </Col>
     </Row>
     <Row xs={1} md={2} lg={3} className={`g-3 ${classes.cardsRow}`}>
