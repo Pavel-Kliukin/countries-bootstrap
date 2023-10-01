@@ -21,6 +21,7 @@
 }
 
 .cardsContainer {
+  margin-top: 56px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <Container fluid>
       <Row>
-        <Navbar bg="light" variant="light">
+        <Navbar expand="lg" bg="light" variant="light" fixed="top">
           <Container className="justify-content-end">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -40,9 +40,9 @@ const Layout = () => {
               </Nav>
             </Navbar.Collapse>
             {user && isLoading? 
-              <Button onClick={logout}>Logout</Button> : 
+              <Button style={{ marginLeft: '10px' }} onClick={logout}>Logout</Button> : 
               <LinkContainer to="/login">
-                <Button>Login</Button>
+                <Button style={{ marginLeft: '10px' }}>Login</Button>
               </LinkContainer>
             }
           </Container>

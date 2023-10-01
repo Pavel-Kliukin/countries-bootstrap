@@ -4,6 +4,7 @@ import { useNavigate } from "react-router"
 import { auth, loginWithEmailAndPassword } from "../auth/firebase"
 import { Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import classes from './CSS/Login.module.css'
 
 
 const Login = () => {
@@ -18,7 +19,7 @@ const Login = () => {
   },[user, loading])
 
   return (
-    <div>
+    <div className={classes.mainBox}>
        <input
         type="email"
         value={email}
@@ -31,7 +32,10 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <Button onClick={() => loginWithEmailAndPassword(email, password)}>Login</Button>
+      <Button 
+        onClick={() => loginWithEmailAndPassword(email, password)} 
+        style={{ marginLeft: '10px' }}>Login
+      </Button>
       <div>
         Don't have an account?
         <Link to="/register">Register</Link>

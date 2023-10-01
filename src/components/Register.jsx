@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import { auth, registerWithEmailAndPassword } from '../auth/firebase'
 import { Button } from 'react-bootstrap'
+import classes from './CSS/Register.module.css'
 
 const Register = () => {
   const [email, setEmail] = useState('')
@@ -24,7 +25,7 @@ const Register = () => {
   },[user, loading])
 
   return (
-    <div>
+    <div className={classes.mainBox}>
       <input
         type="text"
         value={name}

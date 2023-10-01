@@ -14,11 +14,17 @@
 }
 
 .cardsContainer {
+  /* background: url("../../assets/world-map-grey.png") no-repeat center/cover; */
+  background-color: #e0e0e0;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; */
+  margin-top: 56px;
+  width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e0e0e0;
 }
 
 .cardsRow {
