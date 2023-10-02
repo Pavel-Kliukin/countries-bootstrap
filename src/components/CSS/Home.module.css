@@ -3,14 +3,14 @@
   width: 100vw;
   margin-top: 56px;
   background: url("../../assets/world-map-png-35425.png") no-repeat center/cover;
-  background-color: #e0e0e0;
+  background-color: #EBEAE6;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .titleBox {
-  background-color: #e0e0e0;
+  background-color: #EBEAE6;
   width: 600px;
   height: 350px;
   border: #807d7d solid 1px;

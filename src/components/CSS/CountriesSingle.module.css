@@ -1,5 +1,5 @@
 .countryContainer {
-    background: #e0e0e0;
+    background: #EBEAE6;
     margin-top: 56px;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
   align-items: center;
   border-radius: 5px;
   border: solid 0.5px #707070;
-  background: #e0e0e0;
+  background: #EBEAE6;
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
 }
@@ -39,7 +39,7 @@
   overflow: hidden;
   border-radius: 10px;
   border: solid 0.5px #707070;
-  background: #e0e0e0;
+  background: #EBEAE6;
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
 }
@@ -64,7 +64,7 @@
   height: 160px;
   border-radius: 10px;
   border: solid 0.5px #707070;
-  background: #e0e0e0;
+  background: #EBEAE6;
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
 }
@@ -84,7 +84,7 @@
   border: solid 0.5px #c6c3c3;
   border-radius: 5px;
   margin-right: 1.5rem;
-  background: #e0e0e0;
+  background: #EBEAE6;
   box-shadow:  none;
 }
 

@@ -9,13 +9,16 @@
   min-height: 270px;
   border-radius: 20px;
   border: solid 2px #c2c5c6;;
-  background: #e0e0e0;
+  background: #EBEAE6;
 }
 
 .cardBox:hover {
   border: solid 0.5px #c2c5c6;
   box-shadow:  26px 26px 52px #cecece,
               -26px -26px 52px #f2f2f2;
+  /* border: solid 0.5px #c2c5c6;
+  box-shadow:  26px 26px 52px #cecece,
+              -26px -26px 52px #f2f2f2; */
 }
 
 .flagContainer {
@@ -34,7 +37,7 @@
   overflow: hidden;
   border-radius: 10%;
   border: solid 1px #707070;
-  background: #e0e0e0;
+  background: #EBEAE6;
   box-shadow:  19px 19px 38px #bcbcbc,
                -19px -19px 38px #ffffff;
 }
