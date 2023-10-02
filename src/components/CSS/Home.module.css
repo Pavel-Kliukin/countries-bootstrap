@@ -1,5 +1,6 @@
 .homeBox {
-  height: 100vh;
+  height: calc(100vh - 56px);
+  /* height: 100vh; */
   width: 100vw;
   margin-top: 56px;
   background: url("../../assets/world-map-png-35425.png") no-repeat center/cover;

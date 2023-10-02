@@ -1,0 +1,19 @@
+.backToTopButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  height: 55px;
+  width: 55px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: #EBEAE6;
+  box-shadow:  13px 13px 26px #bcbbb8,
+              -13px -13px 26px #ffffff;
+}
+
+.backToTopButton:hover {
+  border: solid 0.5px #c2c5c6;
+  box-shadow:  8px 8px 16px #bfbaba,
+              -8px -8px 16px #fffcfc;
+}

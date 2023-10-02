@@ -8,6 +8,7 @@ import CountryCard from './CountryCard';
 import countriesAPI from '../services/countries';
 import { initializeCountries } from '../features/countries/countriesSlice';
 import classes from './CSS/Countries.module.css';
+import BackToTopButton from './BackToTopButton';
 
 const Countries = () => {
   const dispatch = useDispatch()
@@ -54,6 +55,7 @@ const Countries = () => {
           )
         }
       </Row>
+      <BackToTopButton />
     </Container>
   );
 };

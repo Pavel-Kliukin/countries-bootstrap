@@ -5,6 +5,7 @@ import { initializeCountries } from "../features/countries/countriesSlice";
 import { clearFavourites } from "../features/countries/favouritesSlice";
 import CountryCard from "./CountryCard";
 import classes from './CSS/Favourites.module.css';
+import BackToTopButton from "./BackToTopButton";
 
 const Favourites = () => {
   const dispatch = useDispatch()
@@ -37,45 +38,46 @@ const Favourites = () => {
   }
   return (
     <Container className={classes.cardsContainer} fluid>
-    <Row xs={1} md={2} lg={3} className={classes.clearAndSearch}>
-      <Col className="mt-5">
-          <div className={classes.titleBox}>
-            <h1>My Favourites</h1>
+      <Row xs={1} md={2} lg={3} className={classes.clearAndSearch}>
+        <Col className="mt-5">
+            <div className={classes.titleBox}>
+              <h1>My Favourites</h1>
+            </div>
+          </Col>
+        <Col className="mt-5 d-flex justify-content-center align-items-center">
+          <Form>
+            <Form.Control
+              type="search"
+              className={classes.searchForm}
+              placeholder="Search for favourites"
+              aria-label="Search"
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </Form>
+        </Col>
+        <Col className="mt-5 d-flex justify-content-center align-items-center">
+          <div className={classes.buttonBox}>
+            <Button onClick={() => {
+              dispatch(clearFavourites())
+            }}>Clear Favourites</Button>
           </div>
         </Col>
-      <Col className="mt-5 d-flex justify-content-center align-items-center">
-        <Form>
-          <Form.Control
-            type="search"
-            className={classes.searchForm}
-            placeholder="Search for favourites"
-            aria-label="Search"
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </Form>
-      </Col>
-      <Col className="mt-5 d-flex justify-content-center align-items-center">
-        <div className={classes.buttonBox}>
-          <Button onClick={() => {
-            dispatch(clearFavourites())
-          }}>Clear Favourites</Button>
-        </div>
-      </Col>
-    </Row>
-    <Row xs={1} md={2} lg={3} className={`g-3 ${classes.cardsRow}`}>
-      {
-        countriesList.reduce( (prev, country) =>
-          country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
-          [...prev, 
-            <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
-              <CountryCard country={country} />
-            </Col>
-          ]
-          : prev,
-          []
-          )
-      }
-    </Row>
+      </Row>
+      <Row xs={1} md={2} lg={3} className={`g-3 ${classes.cardsRow}`}>
+        {
+          countriesList.reduce( (prev, country) =>
+            country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
+            [...prev, 
+              <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
+                <CountryCard country={country} />
+              </Col>
+            ]
+            : prev,
+            []
+            )
+        }
+      </Row>
+      <BackToTopButton />
     </Container>
   )
 }
