@@ -6,23 +6,30 @@ import { clearFavourites } from "../features/countries/favouritesSlice";
 import CountryCard from "./CountryCard";
 import classes from './CSS/Favourites.module.css';
 import BackToTopButton from "./BackToTopButton";
+import { getFavouritesFromSource } from "../auth/firebase";
 
 const Favourites = () => {
+
   const dispatch = useDispatch()
   let countriesList = useSelector((state) => state.countries.countries)
-  const loading = useSelector((state) => state.countries.loading)
+  const countriesLoading = useSelector((state) => state.countries.loading)
+  const favouritesLoading = useSelector((state) => state.favourites.isLoading) 
   const [search, setSearch] = useState("")
   const favouritesList = useSelector((state) => state.favourites.favourites)  
+  
   if (favouritesList !== null) {
       countriesList = countriesList.filter(c => favouritesList.includes(c.name.common))
   }
   else {
       countriesList = []
   }
+  
   useEffect(() => {
       dispatch(initializeCountries())
+      dispatch(getFavouritesFromSource())
   }, [dispatch])
-  if (loading) {
+  
+  if (countriesLoading || favouritesLoading) {
       return (
         <Col className="text-center m-5">
           <Spinner
