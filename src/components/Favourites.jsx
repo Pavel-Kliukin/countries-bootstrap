@@ -75,7 +75,7 @@ const Favourites = () => {
           countriesList.reduce( (prev, country) =>
             country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
             [...prev, 
-              <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
+              <Col className={`d-flex justify-content-center align-items-center ${classes.cardsCol}`} key={country.name.common}>
                 <CountryCard country={country} />
               </Col>
             ]
