@@ -1,0 +1,67 @@
+.loading {
+  margin-top: 1rem;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flagsContainer {
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flagBox{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10%;
+  border: solid 1px #707070;
+  background: #EBEAE6;
+  box-shadow:  19px 19px 38px #bcbcbc,
+               -19px -19px 38px #ffffff;
+  animation: moveLeft 2.0s linear forwards, appear 0.7s ease-in, disappear 0.7s ease-in 1.3s forwards;
+}
+
+@keyframes moveLeft {
+  from {
+    right: 0; 
+  }
+  to {
+    right: calc(100% - 60px); 
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0; 
+  }
+  to {
+    opacity: 100%; 
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 100%; 
+  }
+  to {
+    opacity: 0%; 
+  }
+}
+
+.flagIMG {
+  opacity: 0.7;
+  width: 50px;
+  height: 35px;
+}
