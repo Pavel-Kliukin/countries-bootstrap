@@ -21,8 +21,6 @@ const MovingFlags = ({direction, toggle}) => { // direction is a boolean. True =
   
   const country = countriesList[Math.floor(Math.random() * countriesList.length)]
   
-
-
   return (
     <>
     {!country ? <div className={classes.loading}>Loading...</div> : 
