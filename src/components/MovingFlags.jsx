@@ -5,27 +5,48 @@ import { useDispatch, useSelector } from 'react-redux';
 import { initializeCountries } from '../features/countries/countriesSlice';
 
 
-const MovingFlags = () => {
+const MovingFlags = ({direction, toggle}) => { // direction is a boolean. True = right, False = left
 
   const dispatch = useDispatch()
   const countriesList = useSelector((state) => state.countries.countries)
-  const country = countriesList[2]
 
   useEffect(() => {
-      if (countriesList.length === 0) {
-        dispatch(initializeCountries())
+    if (countriesList.length === 0) {
+      dispatch(initializeCountries())
     } 
   }, [])
 
+  useEffect(() => {
+  }, [toggle])
   
+  const country = countriesList[Math.floor(Math.random() * countriesList.length)]
+  
+
+
   return (
     <>
     {!country ? <div className={classes.loading}>Loading...</div> : 
+      <>
+        {toggle ? 
+          <div></div> 
+          :
           <div className={classes.flagsContainer}>
-            <div className={classes.flagBox}>
-              <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
-            </div>         
+            {direction ? 
+
+              <div className={`${classes.flagBox} ${classes.moveRight}`}>
+                <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
+              </div> :    
+              <div>
+
+                <div className={`${classes.flagBox} ${classes.moveLeft}`}>
+                  <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
+                </div>        
+
+              </div>  
+            }
           </div>
+        }
+      </>
         }
     </>
   );
