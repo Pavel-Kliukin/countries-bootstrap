@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import classes from './CSS/Home.module.css';
 import MovingFlags from './MovingFlags';
+import { LinkContainer } from 'react-router-bootstrap';
 
 
 const Home = () => {
@@ -19,12 +20,14 @@ const Home = () => {
 
   return (
     <div className={classes.homeBox}>
-      <div className={classes.titleBox}>
-        < MovingFlags direction={true} toggle={toggle}/>
-        <p className={classes.homeTitle}>Countries App</p>
-        <p className={classes.homeMadeBy}>made by Pavel Kliukin</p>
-        < MovingFlags direction={false} toggle={toggle}/>
-      </div>
+      <LinkContainer to="/countries">
+        <div className={classes.titleBox}>
+          < MovingFlags direction={true} toggle={toggle}/>
+          <p className={classes.homeTitle}>Countries App</p>
+          <p className={classes.homeMadeBy}>made by Pavel Kliukin</p>
+          < MovingFlags direction={false} toggle={toggle}/>
+        </div>
+      </LinkContainer>
     </div>
   );
 };
