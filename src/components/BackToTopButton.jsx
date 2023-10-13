@@ -5,7 +5,7 @@ const BackToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
 
   const handleScroll = () => {
-    const scrollPosition = window.pageYOffset;
+    const scrollPosition = window.scrollY;
     setShowButton(scrollPosition > 200);
   };
 

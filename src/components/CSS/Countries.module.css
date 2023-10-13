@@ -31,6 +31,11 @@
   max-width: 1300px;
 }
 
+.cardsCol {
+  max-width: calc(1300px / 3);
+  flex-grow: 1;
+}
+
 @media (max-width: 767px) {
   .searchForm {
     width: 320px;

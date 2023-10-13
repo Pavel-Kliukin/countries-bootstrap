@@ -4,16 +4,14 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import { useDispatch, useSelector } from 'react-redux';
-import CountryCard from './CountryCard';
-import countriesAPI from '../services/countries';
 import { initializeCountries } from '../features/countries/countriesSlice';
-import classes from './CSS/Countries.module.css';
 import BackToTopButton from './BackToTopButton';
+import classes from './CSS/Countries.module.css';
+import CountryCard from './CountryCard';
 
 const Countries = () => {
   const dispatch = useDispatch()
   const countriesList = useSelector((state) => state.countries.countries)
-  const loading = useSelector((state) => state.countries.isLoading)
   const [search, setSearch] = useState('')
 
   useEffect(() => {
@@ -46,7 +44,7 @@ const Countries = () => {
         countriesList.reduce( (prev, country) =>
           country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
           [...prev, 
-            <Col className="d-flex justify-content-center align-items-center" key={country.name.common}>
+            <Col className={`d-flex justify-content-center align-items-center ${classes.cardsCol}`} key={country.name.common}>
               <CountryCard country={country} />
             </Col>
           ]
