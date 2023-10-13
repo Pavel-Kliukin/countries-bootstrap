@@ -29,6 +29,11 @@
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
 }
+.flagCol {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 .flagBox{
   width: 280px;
@@ -52,6 +57,22 @@
   width: auto;
   max-height: 90%;
   height: auto;
+}
+
+.heartBox {
+  width: 50px;
+  height: 50px;
+  margin-left: 2rem;
+  padding-top: 3px;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: solid 0.5px #707070;
+  background: #EBEAE6;
+  box-shadow:  21px 21px 42px #c5c5c5,
+              -21px -21px 42px #fbfbfb;
 }
 
 .countryInfoBox {

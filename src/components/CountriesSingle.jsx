@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Container, Card, Spinner, Col, Image, Row, Button } from 'react-bootstrap';
 import { useLocation,useNavigate } from 'react-router-dom';
 import classes from './CSS/CountriesSingle.module.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavourite, removeFavourite } from '../features/countries/favouritesSlice';
 
 const CountriesSingle = () => {
   // Function hooks
@@ -17,7 +19,19 @@ const CountriesSingle = () => {
   //Destructuring variables
   const country = location.state.country
 
+  // For favourites
+  const favouritesList = useSelector((state) => state.favourites.favourites)
+  const dispatch = useDispatch()
 
+  const handleRemoveFavourite = (event) => {
+    event.stopPropagation();
+    dispatch(removeFavourite(country.name.common));
+  };
+
+  const handleAddFavourite = (event) => {
+    event.stopPropagation();
+    dispatch(addFavourite(country.name.common));
+  };
 
   useEffect(()=> {
 
@@ -39,8 +53,6 @@ const CountriesSingle = () => {
 
   }, [country.capital])
 
-  console.log("weather", weather);
-
   if (loading) {
     return (
       <Container>
@@ -58,12 +70,25 @@ const CountriesSingle = () => {
     <Container className={classes.countryContainer}>
       <div className={classes.countryBox}>
         <div className={classes.countryNameBox}>
-          <h2>{country.name.common}</h2>
+          <h2>
+            {country.name.common}
+          </h2>
         </div>
         <Row xs={1} md={2} className='mt-5'>
-          <Col className='col-3'>
+          <Col className={`col-3 ${classes.flagCol}`}>
             <div className={classes.flagBox}>
               <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
+            </div>
+            <div className={classes.heartBox}>
+              {favouritesList.includes(country.name.common) ? (
+                <i
+                className="bi bi-heart-fill text-danger m-1 p-1"
+                onClick={handleRemoveFavourite} />
+              ) : (
+                <i
+                className="bi bi-heart text-danger m-1 p-1"
+                onClick={handleAddFavourite} />
+              )}
             </div>
           </Col>
           <Col>
