@@ -8,9 +8,11 @@ const Home = () => {
 
   const [toggle, setToggle] = useState(false);
 
+  const duration = toggle ? 100 : 2000;
+
   const timer = setTimeout(() => {
     setToggle(prevToggle => !prevToggle);
-  }, 2000)
+  }, duration)
 
   useEffect(() => {
     return () => {
