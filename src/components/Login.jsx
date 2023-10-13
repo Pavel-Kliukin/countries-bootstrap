@@ -19,26 +19,29 @@ const Login = () => {
   },[user, loading])
 
   return (
-    <div className={classes.mainBox}>
-       <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <Button 
-        onClick={() => loginWithEmailAndPassword(email, password)} 
-        style={{ marginLeft: '10px' }}>Login
-      </Button>
-      <div>
-        Don't have an account?
-        <Link to="/register">Register</Link>
+    <div className={classes.loginBox}>
+      <div className={classes.formBox}>
+        <h1>Login:</h1>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <Button 
+          onClick={() => loginWithEmailAndPassword(email, password)} 
+          style={{ marginLeft: '10px' }}>Login
+        </Button>
+        <div>
+          Don't have an account?{` `}
+          <Link to="/register">Register</Link>
+        </div>
       </div>
     </div>
   )

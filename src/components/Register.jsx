@@ -25,29 +25,32 @@ const Register = () => {
   },[user, loading])
 
   return (
-    <div className={classes.mainBox}>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Full Name"
-      />
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-      />
-      <Button onClick={register}>Register</Button>
-      <div>
-        Already have an account?
-        <Link to="/login">Login</Link>
+    <div className={classes.loginBox}>
+      <div className={classes.formBox}>
+        <h1>Register:</h1>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Full Name"
+        />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+        />
+        <Button onClick={register}>Register</Button>
+        <div>
+          Already have an account?{` `}
+          <Link to="/login">Login</Link>
+        </div>
       </div>
     </div>
   )

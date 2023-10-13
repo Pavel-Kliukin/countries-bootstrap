@@ -11,12 +11,12 @@
 }
 
 .titleBox {
-  background-color: #EBEAE6;
+  background-color: rgba(235, 234, 230, 0.7);
   width: 600px;
   height: 350px;
   border: #807d7d solid 1px;
   border-radius: 10px;
-  opacity: 0.9;
+  /* opacity: 0.9; */
   display: flex;
   flex-direction: column;
   justify-content: center;
