@@ -2,7 +2,7 @@
   height: calc(100vh - 56px);
   width: 100vw;
   margin-top: 56px;
-  background: url("../../assets/world-map-png-35425.png") no-repeat center/cover;
+  background: url("../../assets/world-map-png-35425.png") no-repeat top/cover;
   background-color: #EBEAE6;
   display: flex;
   justify-content: center;

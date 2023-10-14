@@ -1,23 +1,25 @@
 .countryContainer {
-    background: #EBEAE6;
-    margin-top: 56px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    min-width: 100vw;
-    min-height: calc(100vh - 56px);
+  background: #EBEAE6;
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 100vw;
+  min-width: 100vw;
+  min-height: calc(100vh - 56px);
 }
 
 .countryBox {
   margin-top: 3rem;
-  width: 1300px;
+  width: 1000px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .countryNameBox {
-  max-width: 1300px;
+  max-width: 100vw;
   max-height: 200px;
   display: flex;
   flex-direction: column;
@@ -29,6 +31,11 @@
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
 }
+
+.countryNameBox h2 {
+  margin-top: 0.5rem;
+}
+
 .flagCol {
   display: flex;
   justify-content: flex-start;
@@ -81,8 +88,18 @@
   justify-content: center;
   align-items: flex-start;
   padding: 1rem;
+  max-width: 100vw;
   min-width: 300px;
   height: 160px;
+  border-radius: 10px;
+  border: solid 0.5px #707070;
+  background: #EBEAE6;
+  box-shadow:  21px 21px 42px #c5c5c5,
+              -21px -21px 42px #fbfbfb;
+}
+
+.capitalImg{
+  max-width: 100vw;
   border-radius: 10px;
   border: solid 0.5px #707070;
   background: #EBEAE6;

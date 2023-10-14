@@ -111,12 +111,11 @@ const CountriesSingle = () => {
         </Row>
         <Row xs={1} md={2} className='mt-5'>
           <Col>
-            <Image thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
+            <Image className={classes.capitalImg} thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
           </Col>
           <Col>
             <div className={`${classes.countryInfoBox} ${classes.bigInfo}`}>
-              <p><strong>Region:</strong> {country.region}</p>
-              <p><strong>Subregion:</strong> {country.subregion}</p>
+              <p><strong>Region:</strong> {country.region}&nbsp;&nbsp; /&nbsp;&nbsp; <strong>Subregion:</strong> {country.subregion}</p>
               <p><strong>Population:</strong> {country.population.toLocaleString('en-US')} people</p>
               <p><strong>Area:</strong> {country.area.toLocaleString('en-US')} km<sup>2</sup></p>
               <p><strong>Timezone:</strong> {country.timezones[0]}</p>

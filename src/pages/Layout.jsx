@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <Container fluid>
       <Row>
-        <Navbar expand="lg" bg="light" variant="light" fixed="top">
+        <Navbar className='navBar' expand="lg" style={{ backgroundColor: 'rgba(235, 234, 230, 0.8)', border: "solid 0.5px #c2c5c6"}} variant="light" fixed="top">
           <Container className="justify-content-end">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">

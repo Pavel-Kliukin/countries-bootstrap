@@ -14,11 +14,7 @@
 }
 
 .cardsContainer {
-  /* background: url("../../assets/world-map-grey.png") no-repeat center/cover; */
   background-color: #EBEAE6;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; */
   margin-top: 56px;
   width: 100vw;
   min-height: 100vh;

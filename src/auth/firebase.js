@@ -9,13 +9,17 @@ import { getFavourites, isLoading } from "../features/countries/favouritesSlice"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAUSXmuk6niGtzamWlqiBa-rRaMRn1gF6g",
-  authDomain: "countries-13119.firebaseapp.com",
-  projectId: "countries-13119",
-  storageBucket: "countries-13119.appspot.com",
-  messagingSenderId: "570629609890",
-  appId: "1:570629609890:web:a97a6cf9151725818efafb",
+
+
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID
 };
+
+console.log("api-key: ",firebaseConfig.apiKey);
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
