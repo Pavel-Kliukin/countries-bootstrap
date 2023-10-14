@@ -74,8 +74,8 @@ const CountriesSingle = () => {
             {country.name.common}
           </h2>
         </div>
-        <Row xs={1} md={2} className='mt-5'>
-          <Col className={`col-3 ${classes.flagCol}`}>
+        <Row xs={1} sm={1} md={2} className='mt-5'>
+          <Col className={classes.flagCol}>
             <div className={classes.flagBox}>
               <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
             </div>
@@ -109,7 +109,7 @@ const CountriesSingle = () => {
             </div>
           </Col>
         </Row>
-        <Row xs={1} md={2} className='mt-5'>
+        <Row xs={1} sm={1} md={2} className='mt-5'>
           <Col>
             <Image className={classes.capitalImg} thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
           </Col>
