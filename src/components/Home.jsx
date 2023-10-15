@@ -14,16 +14,11 @@ const Home = () => {
     setToggle(prevToggle => !prevToggle);
   }, duration)
 
-  // Clear timeout if the component is unmounted
-  window.addEventListener('unload', function () {
-    clearTimeout(timer)
-  });
-
   useEffect(() => {
     return () => {
       clearTimeout(timer);
     }
-  }, []);
+  }, [toggle]);
 
   return (
     <div className={classes.homeBox}>

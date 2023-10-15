@@ -111,7 +111,7 @@ const CountriesSingle = () => {
         </Row>
         <Row sm={1} md={2} className='mt-5'>
           <Col>
-            <Image className={classes.capitalImg} thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
+            <Image className={classes.capitalImg} thumbnail src={'https://source.unsplash.com/1600x900/?' + country.name.common} />
           </Col>
           <Col className={classes.secondColInRow}>
             <div className={`${classes.countryInfoBox} ${classes.bigInfo}`}>
@@ -125,6 +125,11 @@ const CountriesSingle = () => {
                   .join(", ")}</p>
               <p><strong>Languages:</strong> {Object.values(country.languages ?? {}).join(", ")}</p>
             </div>
+          </Col>
+        </Row>
+        <Row className='mt-5'>
+          <Col>
+            <div>Google map will be here</div>
           </Col>
         </Row>
         <Row className='mt-5'>
