@@ -74,7 +74,7 @@ const CountriesSingle = () => {
             {country.name.common}
           </h2>
         </div>
-        <Row xs={1} sm={1} md={2} className='mt-5'>
+        <Row sm={1} md={2} className='mt-5'>
           <Col className={classes.flagCol}>
             <div className={classes.flagBox}>
               <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
@@ -91,7 +91,7 @@ const CountriesSingle = () => {
               )}
             </div>
           </Col>
-          <Col>
+          <Col className={classes.secondColInRow}>
             <div className={classes.countryInfoBox}>
               <p><strong>Official name:</strong> {country.name.official}</p>
               {country.capital && <p><strong>Capital:</strong> {country.capital}</p>}
@@ -109,11 +109,11 @@ const CountriesSingle = () => {
             </div>
           </Col>
         </Row>
-        <Row xs={1} sm={1} md={2} className='mt-5'>
+        <Row sm={1} md={2} className='mt-5'>
           <Col>
             <Image className={classes.capitalImg} thumbnail src={'https://source.unsplash.com/1600x900/?' + country.capital} />
           </Col>
-          <Col>
+          <Col className={classes.secondColInRow}>
             <div className={`${classes.countryInfoBox} ${classes.bigInfo}`}>
               <p><strong>Region:</strong> {country.region}&nbsp;&nbsp; /&nbsp;&nbsp; <strong>Subregion:</strong> {country.subregion}</p>
               <p><strong>Population:</strong> {country.population.toLocaleString('en-US')} people</p>

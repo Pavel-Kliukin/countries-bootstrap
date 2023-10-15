@@ -41,8 +41,8 @@ const Layout = () => {
             </Navbar.Collapse>
             {user && isLoading? 
               <Button style={{ marginLeft: '10px' }} onClick={logout}>Logout</Button> : 
-              <LinkContainer to="/login">
-                <Button style={{ marginLeft: '10px' }}>Login</Button>
+              <LinkContainer  to="/login" style={{ marginLeft: '10px' }}>
+                <Button>Login</Button>
               </LinkContainer>
             }
           </Container>

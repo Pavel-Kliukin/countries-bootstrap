@@ -8,11 +8,16 @@ const Home = () => {
 
   const [toggle, setToggle] = useState(false);
 
-  const duration = toggle ? 100 : 2000;
+  const duration = toggle ? 0 : 2000;
 
   const timer = setTimeout(() => {
     setToggle(prevToggle => !prevToggle);
   }, duration)
+
+  // Clear timeout if the component is unmounted
+  window.addEventListener('unload', function () {
+    clearTimeout(timer)
+  });
 
   useEffect(() => {
     return () => {
