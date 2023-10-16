@@ -1,7 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit"
 import { addFavouriteToFirebase, auth, clearFavouritesFromFirebase, removeFavouriteFromFirebase } from "../../auth/firebase"
 
-const favourites = localStorage.getItem('favourites') !== null ? JSON.parse(localStorage.getItem('favourites')) : []
+// Old code wich uses LocalStorage instead of Firebase: 
+// const favourites = localStorage.getItem('favourites') !== null ? JSON.parse(localStorage.getItem('favourites')) : []
 
 export const favouritesSlice = createSlice({
   name: 'favourites',

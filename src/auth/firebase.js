@@ -94,7 +94,6 @@ export const clearFavouritesFromFirebase = async (uid) => {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       deleteDoc(doc.ref);
-      console.log("Favourites removed from Firebase database");
     });
   } 
   catch (err) {
