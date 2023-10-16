@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: flex-start;
   min-width: 100vw;
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px);
 }
 
 .countryBox {
@@ -126,6 +126,10 @@
 .weatherIconBox:hover {
   box-shadow:  11px 11px 22px #bfbaba,
               -11px -11px 22px #fffcfc;
+}
+
+.map {
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {

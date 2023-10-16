@@ -5,8 +5,10 @@ import { useLocation,useNavigate } from 'react-router-dom';
 import classes from './CSS/CountriesSingle.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavourite, removeFavourite } from '../features/countries/favouritesSlice';
+import CountryMap from './CountryMap';
 
 const CountriesSingle = () => {
+
   // Function hooks
   const location = useLocation()
   const navigate = useNavigate() // force Browser to go to a particular link
@@ -52,6 +54,33 @@ const CountriesSingle = () => {
     }
 
   }, [country.capital])
+
+  //Defines the initial zoom (scale) for Google Map depending on the country area
+  let zoom = 12
+  const area = parseInt(country.area)
+  if (150 < area && area < 750) {
+    zoom = 11
+  } else if (750 <= area && area < 5000) {
+    zoom = 10
+  } else if (5000 <= area && area < 10000) {
+    zoom = 9
+  } else if (10000 <= area && area < 100000) {
+    zoom = 8
+  } else if (100000 <= area && area < 270000) {
+    zoom = 7
+  } else if (270000 <= area && area < 1550000) {
+    zoom = 6
+  } else if (1550000 <= area && area < 7670000) {
+    zoom = 5
+  } else if (7670000 <= area && area < 10000000) {
+    zoom = 4
+  } else if (1000000 <= area) {
+    zoom = 3
+  }
+  
+  console.log("area", area);
+  console.log("zoom initial", zoom);
+
 
   if (loading) {
     return (
@@ -129,7 +158,7 @@ const CountriesSingle = () => {
         </Row>
         <Row className='mt-5'>
           <Col>
-            <div>Google map will be here</div>
+            <CountryMap className={classes.map} lat={country.latlng[0]} lng={country.latlng[1]} zoom={zoom}/>
           </Col>
         </Row>
         <Row className='mt-5'>
