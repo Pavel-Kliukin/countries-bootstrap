@@ -17,7 +17,7 @@ const Layout = () => {
   return (
     <Container fluid>
       <Row>
-        <Navbar className='navBar' expand="lg" style={{ backgroundColor: 'rgba(235, 234, 230, 0.8)', border: "solid 0.5px #c2c5c6"}} variant="light" fixed="top">
+        <Navbar collapseOnSelect className='navBar' expand="sm md lg" style={{ backgroundColor: 'rgba(235, 234, 230, 0.8)', border: "solid 0.5px #c2c5c6"}} variant="light" fixed="top">
           <Container className="justify-content-end">
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
@@ -42,7 +42,7 @@ const Layout = () => {
             {user && isLoading? 
               <Button style={{ marginLeft: '10px' }} onClick={logout}>Logout</Button> : 
               <LinkContainer  to="/login" style={{ marginLeft: '10px' }}>
-                <Button>Login</Button>
+                <Button style={{ marginLeft: '10px' }}>Login</Button>
               </LinkContainer>
             }
           </Container>
