@@ -3,13 +3,12 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '100%',
-  height: '600px'
+  height: '600px',
+  border: 'solid 0.5px #c6c3c3',
 };
 
 
 function CountryMap({lat, lng, zoom}) {
-
-  console.log("zoom", zoom);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',

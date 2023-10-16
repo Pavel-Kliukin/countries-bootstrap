@@ -77,9 +77,21 @@ const CountriesSingle = () => {
   } else if (1000000 <= area) {
     zoom = 3
   }
+
+  // Country's coordinates to pass to Google Map
+  let lat = country.latlng[0]
+  let lng = country.latlng[1]
+
+  // Hardcore fixing of some countries' coordinates
+
+  if (country.name.common === "Saint Martin") {
+    lng = -country.latlng[1];
+  }
   
-  console.log("area", area);
-  console.log("zoom initial", zoom);
+  if (country.name.common === "French Polynesia") {
+    lat = -country.latlng[0];
+    lng = -country.latlng[1];
+  }
 
 
   if (loading) {
@@ -158,7 +170,9 @@ const CountriesSingle = () => {
         </Row>
         <Row className='mt-5'>
           <Col>
-            <CountryMap className={classes.map} lat={country.latlng[0]} lng={country.latlng[1]} zoom={zoom}/>
+            <div className={classes.mapBox}>
+              <CountryMap lat={lat} lng={lng} zoom={zoom}/>
+            </div>
           </Col>
         </Row>
         <Row className='mt-5'>

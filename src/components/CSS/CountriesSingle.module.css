@@ -128,8 +128,13 @@
               -11px -11px 22px #fffcfc;
 }
 
-.map {
+.mapBox {
+  background: #EBEAE6;
   border-radius: 10px;
+  border: solid 0.5px #707070;
+  padding: 0.6rem;
+  box-shadow:  21px 21px 42px #c5c5c5,
+              -21px -21px 42px #fbfbfb;
 }
 
 @media (max-width: 768px) {
