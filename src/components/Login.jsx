@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react"
-import { useAuthState } from "react-firebase-hooks/auth"
 import { useNavigate } from "react-router"
-import { auth, loginWithEmailAndPassword } from "../auth/firebase"
+import { loginWithEmailAndPassword } from "../auth/firebase"
 import { Button } from "react-bootstrap"
 import { Link } from "react-router-dom"
 import classes from './CSS/Login.module.css'
 
 
-const Login = () => {
+const Login = ({user}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [user, loading, error] = useAuthState(auth)
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (loading) return
     if (user) navigate('/countries')
-  },[user, loading])
+  },[user])
 
   return (
     <div className={classes.loginBox}>
