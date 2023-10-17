@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Countries app on React with Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+![Home page](https://github.com/Pavel-Kliukin/countries-bootstrap/assets/98514950/74ec9b18-f219-4b64-898e-c217329a0efe)
 
-### `npm start`
+![Countries page](https://github.com/Pavel-Kliukin/countries-bootstrap/assets/98514950/893a71d2-a082-4d98-bc47-2439a79b3a59)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Country page](https://github.com/Pavel-Kliukin/countries-bootstrap/assets/98514950/7b1b5bcf-6552-4465-a460-1ddd2ca00fe5)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Here you can try it [https://countries-redux.netlify.app/](https://countries-redux.netlify.app/)
 
-### `npm test`
+**This app has authentication, so to try it you should register first.**  
+**It's easy!**  
+**Just enter any name, any email address (you don't have to confirm it) and choose any password.**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## This app was created on React with Redux
 
-### `npm run build`
+It uses [Google Firebase](https://firebase.google.com/) to handle authentication and user's Favourite countries
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It also uses four APIs:
+- [REST Countries](https://restcountries.com/) to get countries info
+- [Google maps API](https://developers.google.com/maps) to show countries maps
+- [Unsplash API](https://source.unsplash.com) to show random pictures of every country
+- [Open Weather](http://openweathermap.org) to get the country's capital weather
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### If you whant to run this app's code on your machine, you should:
+1. Register at [Google Firebase](https://firebase.google.com/), create a new project and get the API-key and other connection required data there.
+2. Register at [Google maps Platform](https://developers.google.com/maps) and connect your Firebase project to the maps platform. In this case you will be able to use your Firebase API-key to get the maps of the countries.
+3. Get the API-key from the [Open Weather](http://openweathermap.org).
+4. Clone this repository to your machine.
+5. Install the dependencies with `npm install`.
+6. In app's root folder create an .env file and fill it with your own data, like this:
+   ![Screenshot 2023-10-17 at 17 33 39](https://github.com/Pavel-Kliukin/countries-bootstrap/assets/98514950/dcc64d8b-7c80-4bb1-893d-6a10c0ace873)
+7. And finally, you can start this app with command `npm start`.
