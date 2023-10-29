@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import Countries from './components/Countries';
 import CountriesSingle from './components/CountriesSingle';
 import Home from './components/Home';
@@ -37,7 +37,7 @@ const App = () => {
   }
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
 
@@ -53,7 +53,7 @@ const App = () => {
 
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
