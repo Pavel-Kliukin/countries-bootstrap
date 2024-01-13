@@ -20,7 +20,7 @@ const App = () => {
   useEffect(() => {
     if (loading) return
   },[loading])
-
+  
   if (loading) {
     return (
       <Col className="text-center m-5">
@@ -32,6 +32,14 @@ const App = () => {
         >
           <span className="visually-hidden">Loading...</span>
         </Spinner>
+      </Col>
+    )
+  }
+  
+  if (error) {
+    return (
+      <Col className="text-center m-5">
+        <h2>Error: {error}</h2>
       </Col>
     )
   }
@@ -47,9 +55,9 @@ const App = () => {
 
           <Route element={<ProtectedRoute user={user}/>}>
             <Route path="/favourites" element={<Favourites />} />
-            <Route path="/countries" element={<Countries />} />
-            <Route path="/countries/:single" element={<CountriesSingle />} />
           </Route>
+          <Route path="/countries" element={<Countries />} />
+          <Route path="/countries/:single" element={<CountriesSingle />} />
 
         </Route>
       </Routes>

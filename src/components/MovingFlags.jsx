@@ -14,10 +14,7 @@ const MovingFlags = ({direction, toggle}) => { // direction is a boolean. True =
     if (countriesList.length === 0) {
       dispatch(initializeCountries())
     } 
-  }, [])
-
-  useEffect(() => {
-  }, [toggle])
+  }, [dispatch, countriesList.length])
   
   const country = countriesList[Math.floor(Math.random() * countriesList.length)]
   

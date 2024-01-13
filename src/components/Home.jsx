@@ -18,7 +18,7 @@ const Home = () => {
     return () => {
       clearTimeout(timer);
     }
-  }, [toggle]);
+  }, [timer]);
 
   return (
     <div className={classes.homeBox}>
