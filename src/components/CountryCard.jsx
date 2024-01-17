@@ -3,9 +3,12 @@ import { LinkContainer } from "react-router-bootstrap"
 import classes from './CSS/CountryCard.module.css'
 import { useDispatch, useSelector } from "react-redux"
 import { addFavourite, removeFavourite } from "../features/countries/favouritesSlice"
+import { useState } from "react"
+import ModalLogin from "./ModalLogin"
 
 
 const CountryCard = ({country}) => {
+  const [modalShow, setModalShow] = useState(false);
 
   const favouritesList = useSelector((state) => state.favourites.favourites)
   const dispatch = useDispatch()
@@ -18,6 +21,7 @@ const CountryCard = ({country}) => {
   const handleAddFavourite = (event) => {
     event.stopPropagation();
     dispatch(addFavourite(country.name.common));
+    setModalShow(true)
   };
 
   return (
@@ -56,6 +60,10 @@ const CountryCard = ({country}) => {
           </Card.Body>
         </Card>
       </LinkContainer>
+      <ModalLogin
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </Col>
   )
 }
