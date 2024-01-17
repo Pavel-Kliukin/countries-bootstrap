@@ -7,7 +7,7 @@ import { useState } from "react"
 import ModalLogin from "./ModalLogin"
 
 
-const CountryCard = ({country}) => {
+const CountryCard = ({country, user}) => {
   const [modalShow, setModalShow] = useState(false);
 
   const favouritesList = useSelector((state) => state.favourites.favourites)
@@ -20,8 +20,8 @@ const CountryCard = ({country}) => {
 
   const handleAddFavourite = (event) => {
     event.stopPropagation();
+    if (!user) return setModalShow(true);
     dispatch(addFavourite(country.name.common));
-    setModalShow(true)
   };
 
   return (

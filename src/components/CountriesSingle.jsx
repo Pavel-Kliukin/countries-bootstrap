@@ -6,6 +6,8 @@ import classes from './CSS/CountriesSingle.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavourite, removeFavourite } from '../features/countries/favouritesSlice';
 import CountryMap from './CountryMap';
+import { auth } from "../auth/firebase"
+import ModalLogin from "./ModalLogin"
 
 const CountriesSingle = () => {
 
@@ -17,11 +19,13 @@ const CountriesSingle = () => {
   const [weather, setWeather] = useState('')
   const [errors, setError] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [modalShow, setModalShow] = useState(false);
 
   //Destructuring variables
   const country = location.state.country
 
   // For favourites
+  const user = auth.currentUser
   const favouritesList = useSelector((state) => state.favourites.favourites)
   const dispatch = useDispatch()
 
@@ -32,6 +36,8 @@ const CountriesSingle = () => {
 
   const handleAddFavourite = (event) => {
     event.stopPropagation();
+    event.stopPropagation();
+    if (!user) return setModalShow(true);
     dispatch(addFavourite(country.name.common));
   };
 
@@ -181,6 +187,10 @@ const CountriesSingle = () => {
           </Col>
         </Row>
       </div>
+      <ModalLogin
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </Container>
   );
 };

@@ -17,9 +17,9 @@ const App = () => {
 
   const [user, loading, error] = useAuthState(auth)
 
-  useEffect(() => {
-    if (loading) return
-  },[loading])
+  // useEffect(() => {
+  //   if (loading) return
+  // },[loading])
   
   if (loading) {
     return (

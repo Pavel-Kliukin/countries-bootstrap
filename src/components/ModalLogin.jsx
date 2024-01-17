@@ -12,10 +12,11 @@ function ModalLogin (props) {
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          To manage your favourites, please login:
+          Favourites
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
+        <p>To manage your favourites, please login:</p>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>Email address</Form.Label>

@@ -8,8 +8,10 @@ import { initializeCountries } from '../features/countries/countriesSlice';
 import BackToTopButton from './BackToTopButton';
 import classes from './CSS/Countries.module.css';
 import CountryCard from './CountryCard';
+import { auth } from "../auth/firebase"
 
 const Countries = () => {
+  const user = auth.currentUser
   const dispatch = useDispatch()
   const countriesList = useSelector((state) => state.countries.countries)
   const [search, setSearch] = useState('')
@@ -45,7 +47,7 @@ const Countries = () => {
           country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
           [...prev, 
             <Col className={`d-flex justify-content-center align-items-center ${classes.cardsCol}`} key={country.name.common}>
-              <CountryCard country={country} />
+              <CountryCard country={country} user={user} />
             </Col>
           ]
           : prev,
