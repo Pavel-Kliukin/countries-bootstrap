@@ -7,10 +7,12 @@ import CountryCard from "./CountryCard";
 import classes from './CSS/Favourites.module.css';
 import BackToTopButton from "./BackToTopButton";
 import { getFavouritesFromSource } from "../auth/firebase";
+import { auth } from "../auth/firebase"
 
 const Favourites = () => {
 
   const dispatch = useDispatch()
+  const user = auth.currentUser
   let countriesList = useSelector((state) => state.countries.countries)
   const countriesLoading = useSelector((state) => state.countries.loading)
   const favouritesLoading = useSelector((state) => state.favourites.isLoading) 
@@ -76,7 +78,7 @@ const Favourites = () => {
             country.name.common.toLowerCase().includes(search.toLowerCase()) ? 
             [...prev, 
               <Col className={`d-flex justify-content-center align-items-center ${classes.cardsCol}`} key={country.name.common}>
-                <CountryCard country={country} />
+                <CountryCard country={country} user={user} />
               </Col>
             ]
             : prev,
