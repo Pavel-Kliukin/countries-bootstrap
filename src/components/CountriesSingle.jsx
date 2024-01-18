@@ -36,12 +36,16 @@ const CountriesSingle = () => {
 
   const handleAddFavourite = (event) => {
     event.stopPropagation();
-    event.stopPropagation();
-    if (!user) return setModalShow(true);
-    dispatch(addFavourite(country.name.common));
+    if (!user) setModalShow(true);
+    else {
+      setModalShow(false);
+      dispatch(addFavourite(country.name.common));
+    }
   };
 
   useEffect(()=> {
+
+    if (user) setModalShow(false);
 
     if(!country.capital) {
       setLoading(false)
@@ -59,7 +63,7 @@ const CountriesSingle = () => {
         })
     }
 
-  }, [country.capital])
+  }, [country.capital, user])
 
   //Defines the initial zoom (scale) for Google Map depending on the country area
   let zoom = 12
@@ -127,7 +131,7 @@ const CountriesSingle = () => {
               <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
             </div>
             <div className={classes.heartBox}>
-              {favouritesList.includes(country.name.common) ? (
+              {favouritesList.includes(country.name.common) && user? (
                 <i
                 className="bi bi-heart-fill text-danger m-1 p-1"
                 onClick={handleRemoveFavourite} />
