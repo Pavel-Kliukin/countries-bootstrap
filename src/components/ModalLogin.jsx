@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { loginWithEmailAndPassword } from "../auth/firebase"
+import { Link } from "react-router-dom"
 
 function ModalLogin (props) {
 
@@ -48,6 +49,10 @@ function ModalLogin (props) {
       <Modal.Footer>
         <Button onClick={() => loginWithEmailAndPassword(email, password)}>Login</Button>
       </Modal.Footer>
+      <div style={{ textAlign: 'left', margin: '1rem 1rem'}}>
+          Don't have an account?{` `}
+          <Link to="/register">Register</Link>
+      </div>
     </Modal>
   );
 }
