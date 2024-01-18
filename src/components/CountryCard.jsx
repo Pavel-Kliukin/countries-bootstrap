@@ -3,9 +3,16 @@ import { LinkContainer } from "react-router-bootstrap"
 import classes from './CSS/CountryCard.module.css'
 import { useDispatch, useSelector } from "react-redux"
 import { addFavourite, removeFavourite } from "../features/countries/favouritesSlice"
+import { useEffect, useState } from "react"
+import ModalLogin from "./ModalLogin"
 
 
-const CountryCard = ({country}) => {
+const CountryCard = ({country, user}) => {
+  const [modalShow, setModalShow] = useState(false);
+
+  useEffect(() => {
+    if (user) setModalShow(false);
+  }, [user]);
 
   const favouritesList = useSelector((state) => state.favourites.favourites)
   const dispatch = useDispatch()
@@ -17,7 +24,11 @@ const CountryCard = ({country}) => {
 
   const handleAddFavourite = (event) => {
     event.stopPropagation();
-    dispatch(addFavourite(country.name.common));
+    if (!user) setModalShow(true);
+    else {
+      setModalShow(false);
+      dispatch(addFavourite(country.name.common));
+    }
   };
 
   return (
@@ -31,7 +42,7 @@ const CountryCard = ({country}) => {
             <Card.Title>
               {country.name.common}
 
-            {favouritesList.includes(country.name.common) ? (
+            {favouritesList.includes(country.name.common) && user? (
                     <i
                     className="bi bi-heart-fill text-danger m-1 p-1"
                     onClick={handleRemoveFavourite} />
@@ -56,6 +67,10 @@ const CountryCard = ({country}) => {
           </Card.Body>
         </Card>
       </LinkContainer>
+      <ModalLogin
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </Col>
   )
 }

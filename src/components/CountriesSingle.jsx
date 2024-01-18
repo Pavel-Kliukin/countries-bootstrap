@@ -6,6 +6,8 @@ import classes from './CSS/CountriesSingle.module.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavourite, removeFavourite } from '../features/countries/favouritesSlice';
 import CountryMap from './CountryMap';
+import { auth } from "../auth/firebase"
+import ModalLogin from "./ModalLogin"
 
 const CountriesSingle = () => {
 
@@ -17,11 +19,13 @@ const CountriesSingle = () => {
   const [weather, setWeather] = useState('')
   const [errors, setError] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [modalShow, setModalShow] = useState(false);
 
   //Destructuring variables
   const country = location.state.country
 
   // For favourites
+  const user = auth.currentUser
   const favouritesList = useSelector((state) => state.favourites.favourites)
   const dispatch = useDispatch()
 
@@ -32,10 +36,16 @@ const CountriesSingle = () => {
 
   const handleAddFavourite = (event) => {
     event.stopPropagation();
-    dispatch(addFavourite(country.name.common));
+    if (!user) setModalShow(true);
+    else {
+      setModalShow(false);
+      dispatch(addFavourite(country.name.common));
+    }
   };
 
   useEffect(()=> {
+
+    if (user) setModalShow(false);
 
     if(!country.capital) {
       setLoading(false)
@@ -53,7 +63,7 @@ const CountriesSingle = () => {
         })
     }
 
-  }, [country.capital])
+  }, [country.capital, user])
 
   //Defines the initial zoom (scale) for Google Map depending on the country area
   let zoom = 12
@@ -121,7 +131,7 @@ const CountriesSingle = () => {
               <Card.Img className={classes.flagIMG} src={country.flags.png} /> 
             </div>
             <div className={classes.heartBox}>
-              {favouritesList.includes(country.name.common) ? (
+              {favouritesList.includes(country.name.common) && user? (
                 <i
                 className="bi bi-heart-fill text-danger m-1 p-1"
                 onClick={handleRemoveFavourite} />
@@ -181,6 +191,10 @@ const CountriesSingle = () => {
           </Col>
         </Row>
       </div>
+      <ModalLogin
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
     </Container>
   );
 };
