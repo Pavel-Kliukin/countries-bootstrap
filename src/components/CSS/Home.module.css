@@ -10,6 +10,7 @@
 }
 
 .titleBox {
+  cursor: pointer;
   background-color: rgba(235, 234, 230, 0.7);
   width: 600px;
   height: 350px;
@@ -19,19 +20,29 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s linear;
+  transition: all 0.3s ease-in-out;
 }
 
 .titleBox:hover {
-  background-color: rgba(235, 234, 230, 0.9);
-  width: 610px;
-  height: 360px;
+  background-color: rgba(235, 234, 230);
 }
 
 .homeTitle {
   font-size: 4rem;
   margin: 0;
   margin-top: 2rem;
+}
+
+.underline {
+  width: 0;
+  height: 5px;
+  background-color: #807d7d;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.titleBox:hover .underline {
+  width: 420px;
 }
 
 .homeMadeBy {

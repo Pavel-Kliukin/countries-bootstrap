@@ -26,6 +26,7 @@ const Home = () => {
         <div className={classes.titleBox}>
           < MovingFlags direction={true} toggle={toggle}/>
           <p className={classes.homeTitle}>Countries App</p>
+          <div className={classes.underline} ></div> 
           <p className={classes.homeMadeBy}>made by Pavel Kliukin</p>
           < MovingFlags direction={false} toggle={toggle}/>
         </div>
