@@ -98,12 +98,21 @@
               -21px -21px 42px #fbfbfb;
 }
 
+.spinnerBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .capitalImg{
   width: 100%;
   min-width: 280px;
   border-radius: 10px;
   border: solid 0.5px #707070;
   background: #EBEAE6;
+  opacity: 0;
   box-shadow:  21px 21px 42px #c5c5c5,
               -21px -21px 42px #fbfbfb;
 }

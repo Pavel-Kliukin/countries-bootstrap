@@ -13,7 +13,7 @@ const Login = ({user}) => {
 
   useEffect(() => {
     if (user) navigate('/countries')
-  },[user])
+  },[user, navigate])
 
   return (
     <div className={classes.loginBox}>

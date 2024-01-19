@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Countries from './components/Countries';
 import CountriesSingle from './components/CountriesSingle';
@@ -16,10 +15,6 @@ import { Col, Spinner } from 'react-bootstrap';
 const App = () => {
 
   const [user, loading, error] = useAuthState(auth)
-
-  // useEffect(() => {
-  //   if (loading) return
-  // },[loading])
   
   if (loading) {
     return (

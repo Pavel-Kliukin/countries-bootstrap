@@ -36,7 +36,7 @@
 .underline {
   width: 0;
   height: 5px;
-  background-color: #807d7d;
+  background-color: black;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease-in-out;
 }

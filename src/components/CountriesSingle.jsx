@@ -20,9 +20,16 @@ const CountriesSingle = () => {
   const [errors, setError] = useState(false)
   const [loading, setLoading] = useState(true)
   const [modalShow, setModalShow] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // This one is for image loading from Unsplash
 
-  //Destructuring variables
+
   const country = location.state.country
+  
+  const imageLoadHandler = () => {
+    setIsLoading(false);
+    const imageFromUnsplash = document.getElementById('imageFromUnsplash');
+    imageFromUnsplash.style.opacity = 1;
+  }
 
   // For favourites
   const user = auth.currentUser
@@ -162,7 +169,22 @@ const CountriesSingle = () => {
         </Row>
         <Row sm={1} md={2} className='mt-5'>
           <Col>
-            <Image className={classes.capitalImg} thumbnail src={'https://source.unsplash.com/1600x900/?' + country.name.common} />
+            {isLoading 
+              && 
+              <div className={classes.spinnerBox} >
+                <Spinner animation="border" role="status" className='center' variant='info'>
+                  {/* This span is not visible for a user but we use it for accessability porpose */}
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              </div>
+            }
+            <Image 
+              id='imageFromUnsplash'
+              className={classes.capitalImg} 
+              thumbnail src={'https://source.unsplash.com/1600x900/?' + country.name.common} 
+              onLoad={() => imageLoadHandler()} 
+              onError={() => imageLoadHandler()} 
+            />
           </Col>
           <Col className={classes.secondColInRow}>
             <div className={`${classes.countryInfoBox} ${classes.bigInfo}`}>
