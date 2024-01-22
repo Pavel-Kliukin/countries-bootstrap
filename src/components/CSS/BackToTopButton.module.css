@@ -17,3 +17,10 @@
   box-shadow:  8px 8px 16px #bfbaba,
               -8px -8px 16px #fffcfc;
 }
+
+@media (max-width: 500px) {
+
+  .backToTopButton {
+    display: none;
+  }
+}
